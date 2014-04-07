@@ -18,6 +18,7 @@
 		5B93D32F18F332DF00563E6A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B93D30E18F332DF00563E6A /* Cocoa.framework */; };
 		5B93D33718F332DF00563E6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B93D33518F332DF00563E6A /* InfoPlist.strings */; };
 		5B93D33918F332DF00563E6A /* TT1MenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B93D33818F332DF00563E6A /* TT1MenuTests.m */; };
+		BDFABBEF847A4CB59DA353F9 /* libPods-TT1Menu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C63EFD5A406C4428AB436D19 /* libPods-TT1Menu.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14C4BCA64E5B429DAD0030B2 /* Pods-TT1Menu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT1Menu.xcconfig"; path = "Pods/Pods-TT1Menu.xcconfig"; sourceTree = "<group>"; };
 		5B93D30B18F332DF00563E6A /* TT1Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TT1Menu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B93D30E18F332DF00563E6A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5B93D31118F332DF00563E6A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -50,6 +52,7 @@
 		5B93D33418F332DF00563E6A /* TT1MenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TT1MenuTests-Info.plist"; sourceTree = "<group>"; };
 		5B93D33618F332DF00563E6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5B93D33818F332DF00563E6A /* TT1MenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TT1MenuTests.m; sourceTree = "<group>"; };
+		C63EFD5A406C4428AB436D19 /* libPods-TT1Menu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TT1Menu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B93D30F18F332DF00563E6A /* Cocoa.framework in Frameworks */,
+				BDFABBEF847A4CB59DA353F9 /* libPods-TT1Menu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +84,7 @@
 				5B93D33218F332DF00563E6A /* TT1MenuTests */,
 				5B93D30D18F332DF00563E6A /* Frameworks */,
 				5B93D30C18F332DF00563E6A /* Products */,
+				14C4BCA64E5B429DAD0030B2 /* Pods-TT1Menu.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +103,7 @@
 				5B93D30E18F332DF00563E6A /* Cocoa.framework */,
 				5B93D32D18F332DF00563E6A /* XCTest.framework */,
 				5B93D31018F332DF00563E6A /* Other Frameworks */,
+				C63EFD5A406C4428AB436D19 /* libPods-TT1Menu.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B93D33C18F332DF00563E6A /* Build configuration list for PBXNativeTarget "TT1Menu" */;
 			buildPhases = (
+				C788D3897E7546A3BC7953F0 /* Check Pods Manifest.lock */,
 				5B93D30718F332DF00563E6A /* Sources */,
 				5B93D30818F332DF00563E6A /* Frameworks */,
 				5B93D30918F332DF00563E6A /* Resources */,
+				83D3698721E14A3CA1A9314C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,6 +255,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83D3698721E14A3CA1A9314C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-TT1Menu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C788D3897E7546A3BC7953F0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B93D30718F332DF00563E6A /* Sources */ = {
@@ -384,6 +425,7 @@
 		};
 		5B93D33D18F332DF00563E6A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14C4BCA64E5B429DAD0030B2 /* Pods-TT1Menu.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -397,6 +439,7 @@
 		};
 		5B93D33E18F332DF00563E6A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14C4BCA64E5B429DAD0030B2 /* Pods-TT1Menu.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -467,6 +510,7 @@
 				5B93D33E18F332DF00563E6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B93D33F18F332DF00563E6A /* Build configuration list for PBXNativeTarget "TT1MenuTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +519,7 @@
 				5B93D34118F332DF00563E6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
