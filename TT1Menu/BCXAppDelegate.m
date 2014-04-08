@@ -110,7 +110,6 @@
 
 - (void)lock:(NSMenuItem *)sender
 {
-    if (self.ws)
     if ([sender.title isEqualToString:@"Lock DB"]) {
         NSString *path = [NSString stringWithFormat:@"http://fsaint.net/model_lock/lock?user=%@", NSUserName()];
         [[AFHTTPRequestOperationManager manager] GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -118,8 +117,7 @@
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", [error localizedDescription]);
         }];
-    }
-    else {
+    }else {
         NSString *path = [NSString stringWithFormat:@"http://fsaint.net/model_lock/unlock?user=%@", NSUserName()];
         [[AFHTTPRequestOperationManager manager] GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             sender.title = @"Lock DB";
