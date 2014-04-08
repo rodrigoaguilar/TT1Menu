@@ -20,6 +20,7 @@
 }
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    [NSApp setActivationPolicy: NSApplicationActivationPolicyAccessory];
     [self setupStatusItem];
     [self setupSocket];
 }
