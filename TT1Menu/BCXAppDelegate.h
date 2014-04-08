@@ -7,10 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SRWebSocket.h"
 
-@interface BCXAppDelegate : NSObject <NSApplicationDelegate>
+@interface BCXAppDelegate : NSObject <NSApplicationDelegate,SRWebSocketDelegate>
 
 
 @property (strong, nonatomic) NSStatusItem *statusItem;
-
+@property (strong, nonatomic) NSString *lock;
+@property (strong, nonatomic) SRWebSocket *ws;
 @end
