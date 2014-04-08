@@ -12,13 +12,16 @@
 
 @implementation BCXAppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    [self setupStatusItem];
+-(void)setupSocket{
     self.ws = [[SRWebSocket alloc] initWithURL:[[NSURL alloc] initWithString:@"http://fsaint.net/model_lock/ws/"]];
     self.ws.delegate = self;
     [self.ws open];
-    NSLog(@"Did Fin");
+
+}
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+    [self setupStatusItem];
+    [self setupSocket];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
@@ -45,6 +48,7 @@
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
 {
     NSLog(@"Did Close");
+    [self setupSocket];
 }
 
 
@@ -105,6 +109,7 @@
 
 - (void)lock:(NSMenuItem *)sender
 {
+    if (self.ws)
     if ([sender.title isEqualToString:@"Lock DB"]) {
         NSString *path = [NSString stringWithFormat:@"http://fsaint.net/model_lock/lock?user=%@", NSUserName()];
         [[AFHTTPRequestOperationManager manager] GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
